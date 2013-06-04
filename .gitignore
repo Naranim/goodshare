@@ -1,0 +1,7 @@
+*.swp
+notatki
+todo
+.ropeproject*
+*.*~
+*.pyc
+

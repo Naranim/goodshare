@@ -261,8 +261,14 @@ ul.style4 .first
 #featured-wrapper {
 	overflow: hidden;
 	padding: 6em 50px;
-	background: #E54732;
+	background: #a7c868;
 	color: #2D2D2D;
+}
+
+.center {
+	margin-left:auto;
+	margin-right:auto;
+	width:35%;
 }
 
 #featured-wrapper h2
@@ -271,7 +277,7 @@ ul.style4 .first
 	text-transform: uppercase;
 	font-weight: 300;
 	font-size: 1.8em;
-	color: #FFF;
+	color: #9b132a;
 }
 
 #featured-wrapper span
@@ -324,7 +330,7 @@ ul.style4 .first
 }
 
 #logo h1 span {
-	color: #E94730;
+	color: #80bb0e;
 }
 
 #logo p {
@@ -402,11 +408,11 @@ ul.style4 .first
 
 #page {
 	overflow: hidden;
-	height: 26em;
+	min-height: 26em;
 	padding-top: 4em;
-	padding-left: 50px;
+	padding-left: 60px;
 	background: url(images/img02.png) no-repeat right bottom;
-	color: #6A6A6A;
+	color: #bbbbbb;
 }
 
 #page .content
@@ -438,7 +444,16 @@ ul.style4 .first
 	text-transform: uppercase;
 	font-size: 1.8em;
 	font-weight: 200;
-	color: #E94730;
+	color: #80bb0e;
+}
+.button-style-found {
+	display: inline-block;
+	margin-top: 15px;
+	padding: 6px 20px;
+	background: #80bb0e;
+	border-radius: 3px;
+	text-decoration: none;
+	color: #000000;
 }
 
 /** CONTENT */
@@ -565,7 +580,7 @@ ul.style4 .first
 
 .button-style-alt
 {
-	background: #E94730;
+	background: #80bb0e;
 	padding: 15px 20px;
 	font-size: 1.3em;
 	font-weight: 600;

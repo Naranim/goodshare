@@ -1,0 +1,67 @@
+{% extends "logged.html" %}
+
+{% block content %}
+	<div id="featured-wrapper">
+		<div id="box1">
+			<h2>{{ profile.alias }}<br />
+				<span>{{ profile.first_name }} {{ profile.last_name }}</span></h2>
+			<p> {{ profile.description }}</p>
+			<ul class="style4">
+				<li class="first"> <strong> email: </strong> {{ profile.email }}</li>
+				<li> <strong> płeć: </strong> {{ profile.gender }}</li>
+				<li> <strong> data urodzenia: </strong> {{ profile.date_of_birth }}</li>
+				<li> <strong> ocena: </strong> {{ rate }}</li>
+			</ul>
+			{% if user.id == profile.id %}
+				<a href="/accounts/change{{user.id}}" class="button-style">Zmień swoje dane</a> </div>
+			{% else %}
+				<a href="/accounts/send{{user.id}}" class="button-style">Wyślij wiadomość</a> </div>
+			{% endif %}
+		<div id="box2">
+			<h2>Posiadane dobra</h2>
+			<ul class="style3">
+				{% for good in goods %}
+				<li>
+				<h3><p><a href="/goods/g{{ good.id }}">{{ good.name }}</a></p></h3>
+					<p>{{ good.type.name }}</p>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div id="box3">
+			<h2>Miejsca</h2>
+			<ul class="style4">
+				{% for place in places %}
+				<li><a href="/places/p{{place.id}}">place.name</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock %}
+
+{% block footer %}
+	<div id="footer-content" class="container">
+		<div id="fbox1">
+			<h2>Skomentuj</h2>
+			<form action="/accounts/p{{ profile.id }}/ " method="post"> {% csrf_token %}
+					{% for field in form %}
+					<tr>
+					<td>{{ field }}</td>
+					</tr>
+					{% endfor %}
+					<input type="submit" value="Skomentuj" class="button-style"/>
+			</form>
+		</div>
+		<div id="fbox2">
+			<h2>Komentarze</h2>
+			{% for c in comments %}
+			<h3><p><a href="/accounts/p{{ c.creator.id }}">{{ c.creator.alias }}</a> {{ c.date }}</p></h3>
+			<p> {{ c.comment }} </p>
+			{% endfor %}
+		</div>
+		<div id="fbox3">
+			<h2>Ostatnie transakcje</h2>
+		</div>
+	</div>
+</div>
+{% endblock %}

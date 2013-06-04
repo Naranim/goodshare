@@ -1,0 +1,41 @@
+{% extends "logged.html" %}
+
+{% block content %}
+<div id="featured-wrapper">
+	<p><a href="/goods/add_good/"  class="button-style"> Dodaj nową rzecz</a> </p>
+	<div class="content"> 
+		<div class="center">
+
+			<h2>{{ search_failed }}</h2>
+
+			<form action="/goods/goods_search/ " method="post"> {% csrf_token %}
+				<table>
+					{% for field in form %}
+					<tr>
+						<td><strong>{{ field.label_tag }}</strong></td> 
+						<td>{{ field }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+				<div class="center">
+					<input type="submit" value="Wyszukaj" class="button-style"/>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block features %} 
+<div id="page">
+	<div class="content"> 
+		<h3></h3>
+		<cr>
+		{% for good in results %}
+		<p>
+		<a href="/goods/g{{ good.id }}"  class="button-style-found"> {{ good.name }}</a> </p>
+		{{ good.type }}
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('goodshare.accounts.views',
     # Examples:
     # url(r'^$', 'goodshare.views.home', name='home'),
     # url(r'^goodshare/', include('goodshare.foo.urls')),
@@ -13,9 +13,8 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'goodshare.views.index'),
-    url(r'^index', 'goodshare.views.index'),
-    url(r'accounts/', include('goodshare.accounts.urls')),
-    url(r'goods/', include('goodshare.goods.urls')),
+    url(r'^login', 'login_account'),
+    url(r'^logout', 'logout_account'),
+    url(r'^register', 'register'),
+    url(r'^p(?P<account_id>\d+)/$', 'profile'),
 )

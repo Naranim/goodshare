@@ -1,0 +1,26 @@
+{% extends "logged.html" %}
+
+{% block content %}
+	<div id="featured-wrapper">
+		<div id="box1">
+			<h2>{{ good.name}}<br />
+				<span>{{ good.type.name }}</span></h2>
+			<p> <big> {{ good.description }} </big></p>
+
+			<a href="/goods/add_to_account_{{ good.id }}_{{ user.id }}" class="button-style">
+				Dodaj do swojego zbioru
+			</a> </div>
+	</div>
+{% endblock %}
+
+{% block features %} 
+<div id="page">
+	<div class="content"> 
+		<h3>Użytkownicy posiadający tą rzecz:</h3>
+		<cr>
+		{% for person in profiles %}
+		<p><a href="/accounts/p{{ person.id }}"  class="button-style"> {{ person.alias }}</a> </p>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

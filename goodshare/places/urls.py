@@ -13,9 +13,4 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'goodshare.views.index'),
-    url(r'^index', 'goodshare.views.index'),
-    url(r'accounts/', include('goodshare.accounts.urls')),
-    url(r'goods/', include('goodshare.goods.urls')),
 )

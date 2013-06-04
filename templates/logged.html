@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block menu %}
+<li><a href="/accounts/login" accesskey="2" title="">Mój profil ({{ user.alias }})</a></li>
+<li><a href="/places/" accesskey="2" title="">Miejsca</a></li>
+<li><a href="/goods/goods_search/" accesskey="2" title="">Dobra</a></li>
+<li><a href="/accounts/logout" accesskey="2" title="">Logout</a></li>
+{% endblock %}
+
